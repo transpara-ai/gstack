@@ -135,3 +135,14 @@ bun run skill:check      # health dashboard for all skills
 - Safety skills (careful, freeze, guard) use inline advisory prose — always confirm before destructive operations.
 - State paths resolve via `bin/gstack-paths` (sourced via `eval "$(...)"`). Honors `GSTACK_HOME`, `CLAUDE_PLUGIN_DATA`, `CLAUDE_PLANS_DIR`.
 - The `claude` CLI binary resolves via `browse/src/claude-bin.ts` (`Bun.which()` + `GSTACK_CLAUDE_BIN` override). Set `GSTACK_CLAUDE_BIN=wsl` plus `GSTACK_CLAUDE_BIN_ARGS='["claude"]'` to run Claude through WSL on Windows.
+
+
+## Transpara TLC workflow
+
+For software changes in this transpara-ai repository, use the host-installed
+`transpara-tlc` plugin's `tlc` skill. Default to Routine and escalate only under
+its route rules. The canonical source is [transpara-ai/tlc](https://github.com/transpara-ai/tlc).
+
+TLC is an external, unpinned developer dependency. Host maintainers install and
+update it; repository configuration does not pin, install, enable, or copy the
+workflow. Preserve the project-specific instructions and verification above.
